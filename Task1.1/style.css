@@ -73,7 +73,6 @@ body {
 }
 
 .menu__item-a {
-    text-decoration: none;
     font-size: 14px;
     color: #34ACA7;
 }
@@ -134,8 +133,8 @@ body {
 }
 
 .tweet__item-a {
-    text-decoration: none;
     font-size: 10px;
+    color: #34ACA7;
 }
 
 .tweet__text {
@@ -203,7 +202,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-decoration: none;
     padding-left: 20px;
     width: 224px;
     color: #34ACA7;
@@ -268,6 +266,10 @@ body {
 
 /* cards */
 
+a {
+    text-decoration: none;
+}
+
 .cards__blog {
     display: flex;
     justify-content: space-between;
@@ -281,8 +283,13 @@ body {
     margin-right: 18px;
 }
 
+.cards__item:hover {
+    background: #D9EFEC;
+    transition: 0.5s;
+}
+
 .cards__item:last-child {
-    margin-right: 0;
+    margin-left: 2px;
 }
 
 .card__img {
@@ -314,6 +321,7 @@ body {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.02em;
+    color: #000;
 }
 
 .card__date {
@@ -360,7 +368,6 @@ body {
     font-style: normal;
     font-size: 12px;
     letter-spacing: -0.02em;
-    text-decoration: none;
     color: #34ACA7;
 }
 
