@@ -311,6 +311,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 210px;
+    margin-top: 10px;
 }
 
 .card__img {
