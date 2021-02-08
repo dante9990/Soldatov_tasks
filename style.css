@@ -14,7 +14,6 @@ body {
 
 .container {
     width: 1088px;
-    height: 1130px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 45px;
@@ -24,12 +23,16 @@ body {
 
 /* aside-container */
 
-.menu {
+.header {
     width: 140px;
-    height: auto;
     display: flex;
     flex-direction: column;
     margin-right: 50px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
 }
 
 .text {
@@ -37,6 +40,9 @@ body {
     font-weight: normal;
     padding: 0;
     margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
 }
 
 .logo {
@@ -44,22 +50,20 @@ body {
     height: 120px;
     margin-left: 10px;
     margin-right: 10px;
+    background: url('img/icon-logo.svg');
 }
 
 .menu__blog {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: 330px;
     margin-top: 5px;
 }
 
 .menu__item {
-    height: 30px;
     display: flex;
     margin-bottom: 30px;
     flex-direction: row;
-    align-items: center;
 }
 
 .menu__item:hover {
@@ -72,9 +76,31 @@ body {
     margin-right: 10px;
 }
 
+.tastemakers {
+    background: url('img/food-icon.svg') no-repeat;
+}
+
+.blog {
+    background: url('img/blog-icon.svg');
+}
+
+.a-list {
+    background: url('img/a-list-icon.svg');
+}
+
+.contribure {
+    background: url('img/camera-icon.svg');
+}
+
+.about {
+    background: url('img/about-icon.svg');
+}
+
 .menu__item-a {
     font-size: 14px;
     color: #34ACA7;
+    display: flex;
+    align-items: center;
 }
 
 .menu__tweet {
@@ -130,11 +156,15 @@ body {
     width: 16px;
     margin-right: 5px;
     margin-left: 5px;
+    background: url('img/twitter-icon.svg');
 }
 
 .tweet__item-a {
     font-size: 10px;
     color: #34ACA7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .tweet__text {
@@ -148,15 +178,13 @@ body {
     display: flex;
     flex-direction: column;
     width: 896px;
-    height: 996px;
 }
 
 /* banner */
 
 .baner__blog {
     display: flex;
-    height: 445px;
-    background: #34ACA7 url('img/d16260e3ad773c4a7099a138f5c9ed88.jpg') no-repeat;
+    background: url('img/baner-bg.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -172,8 +200,8 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 10px;
+    padding-bottom: 10px;
     width: 272px;
-    height: 47px;
     background: #FFFFFF;
     font-size: 22px;
 }
@@ -182,7 +210,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 10px;
-    height: 42px;
+    padding-bottom: 10px;
     background: #000000;
     color: #FFFFFF;
     font-size: 14px;
@@ -192,17 +220,15 @@ body {
 
 .tabs {
     display: flex;
-    justify-content: start;
-    padding: 0;
+    justify-content: space-between;
     background: #EFF8F7;
-    height: 85px;
 }
 
 .tabs__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px;
+    padding: 20px;
     width: 224px;
     color: #34ACA7;
 }
@@ -224,26 +250,29 @@ body {
 
 .subscribe__blog {
     display: flex;
-    align-content: center;
     justify-content: space-around;
+    flex-direction: row;
     padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px dashed #E5E5E5;
     border-top: 1px dashed #E5E5E5;
     margin-top: 30px;
-    height: 51px;
 }
 
 .mail__img {
     padding: 0;
-    margin: 0;
     width: 32px;
     height: 26px;
+    background: url('img/mail-icon.svg');
 }
 
 .subscribe__text {
-    font-size: 14px;
-    line-height: 16px;
     width: 530px;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
 }
 
 .input__email {
@@ -251,6 +280,7 @@ body {
     height: 22px;
     font-size: 10px;
     padding-left: 5px;
+    margin-right: 10px;
     border: 1px solid #E5E5E5;
 }
 
@@ -273,23 +303,14 @@ a {
 .cards__blog {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 30px;
-    height: 371px;
 }
 
 .cards__item {
     display: flex;
     flex-direction: column;
-    margin-right: 18px;
-}
-
-.cards__item:hover {
-    background: #D9EFEC;
-    transition: 0.5s;
-}
-
-.cards__item:last-child {
-    margin-left: 4px;
+    width: 210px;
 }
 
 .card__img {
@@ -311,34 +332,53 @@ a {
     line-height: 21px;
     letter-spacing: -0.02em;
     font-style: normal;
-    height: 42px;
     color: #34ACA7;
+}
+
+.card__title:hover {
+    text-decoration: underline;
 }
 
 .card__description {
     margin-top: 10px;
     font-style: normal;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
     color: #000;
+}
+
+.footer__cards__item {
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
 }
 
 .card__date {
     display: flex;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
+    margin-right: 5px;
     color: #E5E5E5;
+}
+
+.card__date::after {
+    content: '/';
+    margin-left: 5px;
 }
 
 .text__read {
     color: #34ACA7;
-    width: 50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: flex;
+    font-style: normal;
+}
+
+.text__read::after {
+    content: '...';
+    position: relative;
+    right: 34px;
+    z-index: 1;
+    padding-right: 25px;
+    background-color: #FFFFFF;
+}
+
+.text__read:hover {
+    text-decoration: underline;
 }
 
 /* footer */
@@ -351,32 +391,46 @@ a {
     width: 1088px;
     margin-top: 40px;
     border-top: 2px solid #E5E5E5;
+    padding-top: 10px;
 }
 
 .footer__a-blog {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     width: 220px;
-    height: 30px;
     padding: 0;
     margin: 0;
     margin-left: 5px;
 }
 
 .footer__a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
     font-style: normal;
     font-size: 12px;
-    letter-spacing: -0.02em;
+    list-style-type: none;
     color: #34ACA7;
 }
 
-.line {
-    font-size: 12px;
-    line-height: 12px;
-    color: #E5E5E5;
-    padding-left: 2px;
-    padding-right: 2px;
+.footer__a li {
+    margin-right: 5px;
+}
+
+.footer__a li::after {
+    content: '|';
+    padding: 0;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -4px;
+    color: #e5e5e5;
+}
+
+.footer__a li:first-child::after {
+    content: none;
 }
 
 .footer__text {
@@ -394,4 +448,18 @@ a {
 
 .social__img {
     margin-left: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.twitter-gray {
+    background: url('img/twitter-icon-gray.svg');
+}
+
+.fb {
+    background: url('img/fb-icon.svg');
+}
+
+.rss {
+    background: url('img/rss-icon.svg');
 }
