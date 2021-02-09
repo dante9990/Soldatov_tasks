@@ -14,11 +14,16 @@
     .tabs__item {
         width: 178px;
         align-items: center;
-        border-left: 2px solid #F9FBFB;
+        border-left: 1px solid #F9FBFB;
+        border-right: 1px solid #D6E6E6;
     }
 
     .tabs__item:last-child {
-        border-left: none;
+        border-right: none;
+    }
+
+    .tabs__item:first-child {
+        border-left:none ;
     }
 
     .tabs__description {
