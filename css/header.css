@@ -1,0 +1,133 @@
+.header {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: url('../img/icon-logo.svg');
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top: 5px;
+}
+
+.menu__item {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: row;
+}
+
+.menu__item:hover {
+    background-color: #D9EFEC;
+}
+
+.menu__item-img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.tastemakers {
+    background: url('../img/food-icon.svg') no-repeat;
+}
+
+.blog {
+    background: url('../img/blog-icon.svg');
+}
+
+.a-list {
+    background: url('../img/a-list-icon.svg');
+}
+
+.contribure {
+    background: url('../img/camera-icon.svg');
+}
+
+.about {
+    background: url('../img/about-icon.svg');
+}
+
+.menu__item-link {
+    font-size: 14px;
+    color: #34ACA7;
+    display: flex;
+    align-items: center;
+}
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet__item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.border__bottom {
+    width: 140px;
+    border-bottom: 1px dashed #E5E5E5;
+    padding-bottom: 5px;
+}
+
+.tweet__title {
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.tweet__title:last-child {
+    margin-top: 5px;
+}
+
+.tweet__btn {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.tweet__btn:last-child {
+    margin-top: 15px;
+}
+
+.tweet__btn:hover {
+    background-color: #D9EFEC;
+}
+
+.tweet__item-img {
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background: url('../img/twitter-icon.svg');
+}
+
+.tweet__item-link {
+    font-size: 10px;
+    color: #34ACA7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tweet__text {
+    font-size: 10px;
+    line-height: 19px;
+}

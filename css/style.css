@@ -21,15 +21,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* aside-container */
-
-.header {
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 50px;
-}
-
 .text {
     font-style: italic;
     font-weight: normal;
@@ -38,6 +29,15 @@ body {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.02em;
+}
+
+/* aside-container */
+
+/* .header {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
 }
 
 .logo {
@@ -165,21 +165,21 @@ body {
 .tweet__text {
     font-size: 10px;
     line-height: 19px;
-}
+} */
 
 /* main */
 
-.main {
+/* .main {
     display: flex;
     flex-direction: column;
     width: 896px;
-}
+} */
 
 /* banner */
 
-.baner {
+/* .baner {
     display: flex;
-    background: url('img/baner-bg.jpg') no-repeat;
+    background: url('../img/baner-bg.jpg') no-repeat;
     background-size: cover;
     height: 445px;
 }
@@ -210,9 +210,9 @@ body {
     background: #000000;
     color: #FFFFFF;
     font-size: 14px;
-}
+} */
 
-/* tabs */
+/* tabs
 
 .tabs {
     display: flex;
@@ -240,11 +240,11 @@ body {
 
 .tabs__description {
     font-size: 10px;
-}
+} */
 
 /* subscribe */
 
-.subscribe {
+/* .subscribe {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -288,11 +288,11 @@ body {
     border-radius: 2px;
     font-size: 10px;
     font-style: normal;
-}
+} */
 
 /* cards */
 
-a {
+/* a {
     text-decoration: none;
 }
 
@@ -376,11 +376,11 @@ a {
 
 .text__read:hover {
     text-decoration: underline;
-}
+} */
 
 /* footer */
 
-.footer {
+/* .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -459,4 +459,4 @@ a {
 
 .rss {
     background: url('img/rss-icon.svg');
-}
+} */
