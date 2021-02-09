@@ -181,14 +181,15 @@ body {
     display: flex;
     background: url('img/baner-bg.jpg') no-repeat;
     background-size: cover;
+    height: 445px;
 }
 
 .baner__text {
     display: flex;
     flex-direction: column;
     width: 487px;
+    position: absolute;
     margin-top: 285px;
-    margin-bottom: 70px;
 }
 
 .baner__title {
