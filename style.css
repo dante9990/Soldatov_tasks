@@ -30,11 +30,6 @@ body {
     margin-right: 50px;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-}
-
 .text {
     font-style: italic;
     font-weight: normal;
@@ -53,7 +48,7 @@ body {
     background: url('img/icon-logo.svg');
 }
 
-.menu__blog {
+.menu {
     display: flex;
     flex-direction: column;
     width: auto;
@@ -96,14 +91,14 @@ body {
     background: url('img/about-icon.svg');
 }
 
-.menu__item-a {
+.menu__item-link {
     font-size: 14px;
     color: #34ACA7;
     display: flex;
     align-items: center;
 }
 
-.menu__tweet {
+.tweet {
     display: flex;
     flex-direction: column;
 }
@@ -159,7 +154,7 @@ body {
     background: url('img/twitter-icon.svg');
 }
 
-.tweet__item-a {
+.tweet__item-link {
     font-size: 10px;
     color: #34ACA7;
     display: flex;
@@ -174,7 +169,7 @@ body {
 
 /* main */
 
-.main__container {
+.main {
     display: flex;
     flex-direction: column;
     width: 896px;
@@ -182,7 +177,7 @@ body {
 
 /* banner */
 
-.baner__blog {
+.baner {
     display: flex;
     background: url('img/baner-bg.jpg') no-repeat;
     background-size: cover;
@@ -248,7 +243,7 @@ body {
 
 /* subscribe */
 
-.subscribe__blog {
+.subscribe {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -300,7 +295,7 @@ a {
     text-decoration: none;
 }
 
-.cards__blog {
+.cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -395,7 +390,7 @@ a {
     padding-top: 10px;
 }
 
-.footer__a-blog {
+.footer__link-blog {
     display: flex;
     flex-wrap: wrap;
     width: 220px;
@@ -404,7 +399,7 @@ a {
     margin-left: 5px;
 }
 
-.footer__a {
+.footer__link {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -417,11 +412,11 @@ a {
     color: #34ACA7;
 }
 
-.footer__a li {
+.footer__link li {
     margin-right: 5px;
 }
 
-.footer__a li::after {
+.footer__link li::after {
     content: '|';
     padding: 0;
     position: absolute;
@@ -430,7 +425,7 @@ a {
     color: #e5e5e5;
 }
 
-.footer__a li:first-child::after {
+.footer__link li:first-child::after {
     content: none;
 }
 
