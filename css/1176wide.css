@@ -30,6 +30,10 @@
         display: none;
     }
 
+    .subscribe__text {
+        width: 350px;
+    }
+
     .cards__item {
         width: 160px;
     }

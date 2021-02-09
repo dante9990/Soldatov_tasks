@@ -87,7 +87,7 @@
     padding: 0;
     width: 32px;
     height: 26px;
-    background: url('img/mail-icon.svg');
+    background: url('../img/mail-icon.svg');
 }
 
 .subscribe__text {
