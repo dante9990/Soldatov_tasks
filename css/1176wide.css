@@ -34,6 +34,10 @@
         width: 350px;
     }
 
+    .form {
+        margin-top: 18px;
+    }
+
     .cards__item {
         width: 160px;
     }
