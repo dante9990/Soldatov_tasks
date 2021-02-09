@@ -120,10 +120,6 @@
 
 /* cards */
 
-a {
-    text-decoration: none;
-}
-
 .cards {
     display: flex;
     justify-content: space-between;
@@ -139,7 +135,6 @@ a {
 }
 
 .card__img {
-    width: 207px;
     height: 143px;
     border: 11px solid #FFFFFF;
     box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
@@ -177,7 +172,6 @@ a {
 }
 
 .card__date {
-    display: flex;
     margin-right: 5px;
     color: #E5E5E5;
 }
@@ -189,16 +183,12 @@ a {
 
 .text__read {
     color: #34ACA7;
-    display: flex;
     font-style: normal;
 }
 
 .text__read::after {
     content: '...';
-    position: relative;
-    right: 34px;
-    z-index: 1;
-    padding-right: 25px;
+    position: absolute;
     background-color: #FFFFFF;
 }
 

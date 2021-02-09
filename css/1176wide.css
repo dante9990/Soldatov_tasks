@@ -1,0 +1,17 @@
+@media (max-width: 1176px) {
+    .container {
+        width: 900px;
+    }
+
+    .header {
+        margin-right: 40px;
+    }
+
+    .main {
+        width: 712px;
+    }
+
+    .cards__item {
+        width: 160px;
+    }
+}
