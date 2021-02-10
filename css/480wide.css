@@ -1,0 +1,48 @@
+@media (max-width: 480px) {
+    .container {
+        width: 480px;
+    }
+
+    .header {
+        width: 480px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-top: 20px;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 480px;
+    }
+
+    .baner {
+        width: 480px;
+    }
+
+    .subscribe__text {
+        width: 366px;
+        margin-right: 47px;
+    }
+
+    .input__email {
+        width: 211px;
+        margin-right: 56px;
+    }
+
+    .cards {
+        justify-content: center;
+    }
+
+    .cards__item {
+        width: 375px;
+    }
+
+    .card__img {
+        height: 200px;
+    }
+}

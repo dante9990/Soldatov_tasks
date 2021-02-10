@@ -9,9 +9,9 @@
 
     .menu {
         width: 441px;
-        border: 1px solid red;
         padding: 0;
         margin-right: 0;
+        margin-left: 5px;
     }
 
     .menu__item-img {
@@ -35,6 +35,10 @@
     .baner__title {
         width: auto;
         opacity: 0.5;
+    }
+
+    .tabs {
+        display: none;
     }
 
     .subscribe {
