@@ -1,0 +1,60 @@
+@media (max-width: 768px) {
+    .container {
+        width: 560px;
+    }
+
+    .header {
+        width: 560px;
+    }
+
+    .menu {
+        width: 441px;
+        border: 1px solid red;
+        padding: 0;
+        margin-right: 0;
+    }
+
+    .menu__item-img {
+        display: none;
+    }
+
+    .main {
+        width: 545px;
+        margin-left: 15px;
+    }
+
+    .baner {
+        flex-direction: column-reverse;
+    }
+
+    .baner__text {
+        margin-top: 0;
+        width: auto;
+    }
+
+    .baner__title {
+        width: auto;
+        opacity: 0.5;
+    }
+
+    .subscribe {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 18px;
+    }
+
+
+    .subscribe__text {
+        width: 475px;
+    }
+
+    .input__email {
+        width: 395px;
+        margin-right: 36px;
+    }
+
+    .cards__item {
+        width: 256px;
+        justify-content: space-between;
+    }
+}

@@ -15,15 +15,16 @@
     }
     .menu {
         flex-direction: row;
-        justify-content: start;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         width: 500px;
         margin-top: 0;
+        margin-right: 30px;
     }
     .menu__item {
         margin-bottom: 0;
-        width: 100px;
+        /* width: 100px; */
         justify-content: center;
     }
     .menu__item-link {
@@ -36,6 +37,11 @@
     .tweet {
         display: none;
     }
+
+    .main {
+        width: 716px;
+    }
+
     .footer__link-blog {
         width: 200px;
     }
