@@ -10,22 +10,22 @@
     display: flex;
     background: url('../img/baner-bg.jpg') no-repeat;
     background-size: cover;
-    height: 445px;
+    min-height: 445px;
 }
 
 .baner__text {
     display: flex;
     flex-direction: column;
     width: 487px;
-    position: absolute;
     margin-top: 285px;
 }
 
 .baner__title {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
     width: 272px;
     background: #FFFFFF;
     font-size: 22px;
@@ -33,9 +33,10 @@
 
 .baner__description {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
     background: #000000;
     color: #FFFFFF;
     font-size: 14px;
