@@ -4,7 +4,7 @@
     }
 
     .header {
-        width: 560px;
+        width: auto;
     }
 
     .menu {
@@ -14,13 +14,18 @@
         margin-left: 5px;
     }
 
+    .menu__item {
+        width: auto;
+    }
+
     .menu__item-img {
         display: none;
     }
 
     .main {
         width: 545px;
-        margin-left: 15px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .baner {
