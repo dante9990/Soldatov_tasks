@@ -22,6 +22,8 @@
 
     .baner {
         width: 480px;
+        min-height: 370px;
+        background-size: 110%;
     }
 
     .subscribe__text {
@@ -40,9 +42,18 @@
 
     .cards__item {
         width: 375px;
+        margin-bottom: 30px;
+    }
+
+    .cards__item:last-child {
+        margin-bottom: 0;
     }
 
     .card__img {
         height: 200px;
+    }
+
+    .card__description {
+        min-height: auto;
     }
 }

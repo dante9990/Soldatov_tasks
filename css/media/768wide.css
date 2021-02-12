@@ -5,17 +5,21 @@
 
     .header {
         width: auto;
+        
     }
 
     .menu {
-        width: 441px;
+        width: 432px;
+        height: auto;
         padding: 0;
         margin-right: 0;
         margin-left: 5px;
+        justify-content: space-between;
     }
 
     .menu__item {
         width: auto;
+        margin: 0;
     }
 
     .menu__item-img {
@@ -23,13 +27,14 @@
     }
 
     .main {
-        width: 545px;
-        margin-left: 5%;
-        margin-right: 5%;
+        width: 100%;
+
     }
 
     .baner {
         flex-direction: column-reverse;
+        background-size: 100% 100%;
+        min-height: 353px;
     }
 
     .baner__text {
@@ -64,6 +69,16 @@
 
     .cards__item {
         width: 256px;
-        justify-content: space-between;
+        justify-content: start;
+        margin-top: 15px;
     }
+
+    .card__img {
+        height: 150px;
+    }
+
+    .card__description {
+        min-height: 135px;
+    }
+
 }
