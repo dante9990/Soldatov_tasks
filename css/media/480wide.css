@@ -23,7 +23,7 @@
     .baner {
         width: 480px;
         min-height: 370px;
-        background-size: 110%;
+        background-size: 110% 100%;
     }
 
     .subscribe__text {
