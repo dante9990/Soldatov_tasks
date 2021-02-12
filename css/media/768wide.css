@@ -15,6 +15,7 @@
         margin-right: 0;
         margin-left: 5px;
         justify-content: space-between;
+        
     }
 
     .menu__item {
@@ -28,7 +29,7 @@
 
     .main {
         width: 100%;
-
+        margin: 0 10px;
     }
 
     .baner {
@@ -67,10 +68,14 @@
         margin-right: 36px;
     }
 
+    .cards {
+        margin-top: 25px;
+    }
+
     .cards__item {
         width: 256px;
         justify-content: start;
-        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .card__img {
