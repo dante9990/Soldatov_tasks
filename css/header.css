@@ -74,11 +74,11 @@
     flex-wrap: wrap;
 }
 
-.border__bottom {
+/* .border__bottom {
     width: 140px;
     border-bottom: 1px dashed #E5E5E5;
     padding-bottom: 5px;
-}
+} */
 
 .tweet__title {
     font-family: Verdana;
@@ -87,10 +87,12 @@
     font-size: 12px;
     margin: 0;
     padding: 0;
+    border-bottom: 1px dashed #E5E5E5;
+    padding-bottom: 5px;
 }
 
-.tweet__title:last-child {
-    margin-top: 5px;
+.tweet__item:last-child {
+    margin-top: 10px;
 }
 
 .tweet__btn {

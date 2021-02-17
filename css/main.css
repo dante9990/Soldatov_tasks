@@ -20,23 +20,20 @@
     margin-top: 285px;
 }
 
-.baner__title {
-    display: flex;
-    justify-content: start;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    width: 272px;
-    background: #FFFFFF;
-    font-size: 22px;
-}
-
+.baner__title,
 .baner__description {
     display: flex;
     justify-content: start;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    padding: 10px 0 10px 10px;
+}
+
+.baner__title { 
+    background: #FFFFFF;
+    font-size: 22px;
+    width: 272px;
+}
+
+.baner__description {
     background: #000000;
     color: #FFFFFF;
     font-size: 14px;
