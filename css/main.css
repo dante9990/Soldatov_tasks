@@ -63,12 +63,12 @@
     background: #D9EFEC;
 }
 
-.tabs__title {
+.tabs__item__title {
     font-style: normal;
     font-size: 18px;
 }
 
-.tabs__description {
+.tabs__item__description {
     font-size: 10px;
 }
 /* subscribe */
@@ -166,13 +166,13 @@
     color: #000;
 }
 
-.footer__cards__item {
+.cards__item__footer {
     display: flex;
     justify-content: start;
     margin-top: 10px;
 }
 
-.card__date {
+.cards__date {
     margin-right: 5px;
     color: #E5E5E5;
 }
@@ -182,17 +182,17 @@
     margin-left: 5px;
 }
 
-.text__read {
+.link__read-more {
     color: #34ACA7;
     font-style: normal;
 }
 
-.text__read::after {
+.link__read-more::after {
     content: '...';
     position: absolute;
     background-color: #FFFFFF;
 }
 
-.text__read:hover {
+.link__read-more:hover {
     text-decoration: underline;
 }

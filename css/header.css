@@ -127,7 +127,7 @@
     align-items: center;
 }
 
-.tweet__text {
+.tweet__description {
     font-size: 10px;
     line-height: 19px;
 }

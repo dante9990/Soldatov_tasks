@@ -9,11 +9,11 @@
     }
 
     .menu {
-        width: 432px;
+        width: 425px;
         height: auto;
         padding: 0;
         margin-right: 0;
-        margin-left: 5px;
+        margin-left: 10px;
         justify-content: space-between;
         
     }
