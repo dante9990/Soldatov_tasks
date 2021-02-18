@@ -30,37 +30,40 @@
     background-color: #D9EFEC;
 }
 
-.menu__item-img {
-    height: 30px;
-    width: 30px;
-    margin-right: 10px;
-}
-
-.tastemakers {
-    background: url('../img/food-icon.svg') no-repeat;
-}
-
-.blog {
-    background: url('../img/blog-icon.svg');
-}
-
-.a-list {
-    background: url('../img/a-list-icon.svg');
-}
-
-.contribure {
-    background: url('../img/camera-icon.svg');
-}
-
-.about {
-    background: url('../img/about-icon.svg');
-}
-
 .menu__item-link {
     font-size: 14px;
     color: #34ACA7;
     display: flex;
     align-items: center;
+}
+
+.menu__item-link::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15px;
+}
+
+.menu__item-link--tastemakers::before {
+    background: url('../img/food-icon.svg') no-repeat;
+}
+
+.menu__item-link--blog::before {
+    background: url('../img/blog-icon.svg');
+}
+
+.menu__item-link--a-list::before {
+    background: url('../img/a-list-icon.svg');
+}
+
+.menu__item-link--contribure::before {
+    background: url('../img/camera-icon.svg');
+}
+
+.menu__item-link--about::before {
+    background: url('../img/about-icon.svg');
 }
 
 .tweet {
