@@ -23,8 +23,8 @@
         margin: 0;
     }
 
-    .menu__item-img {
-        display: none;
+    .menu__item-link::before {
+        content: none;
     }
 
     .main {
