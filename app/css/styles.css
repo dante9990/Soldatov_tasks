@@ -343,45 +343,42 @@ a {
         .container .main .cards__item__img {
           height: 113px; } }
 
-@media (max-width: 480px) {
+@media (max-width: 992px) {
   .container {
-    width: 480px; }
+    width: 716px;
+    margin-top: 0; }
     .container .header {
-      width: auto;
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
-      align-items: center;
-      justify-content: center; }
+      flex-direction: row;
+      width: 100%;
+      margin-right: 0;
+      justify-content: space-between;
+      padding: 20px 0; }
       .container .header .logo {
-        margin-top: 20px; }
+        margin: 0; }
+      .container .header .menu {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 500px;
+        margin-top: 0; }
+        .container .header .menu__item {
+          margin-bottom: 0;
+          width: 100px;
+          justify-content: center; }
+          .container .header .menu__item-link {
+            flex-direction: column; }
+            .container .header .menu__item-link::before {
+              margin-right: 0;
+              margin-bottom: 10px; }
+      .container .header .tweet {
+        display: none; }
     .container .main {
-      margin: 0;
-      width: 480px; }
-      .container .main .baner {
-        width: 480px;
-        min-height: 370px;
-        background-size: 110% 100%; }
-      .container .main .subscribe__description {
-        width: 366px;
-        margin-right: 47px; }
-      .container .main .input__email {
-        width: 211px;
-        margin-right: 56px; }
-      .container .main .cards {
-        justify-content: center; }
-        .container .main .cards__item {
-          width: 375px;
-          margin-bottom: 30px; }
-          .container .main .cards__item:last-child {
-            margin-bottom: 0; }
-          .container .main .cards__item__img {
-            height: 200px; }
-          .container .main .cards__item__body__description {
-            min-height: auto; } }
+      width: 716px; } }
 
 @media (max-width: 768px) {
   .container {
-    width: 560px; }
+    max-width: 560px; }
     .container .header {
       width: auto;
       margin-bottom: 20px; }
@@ -431,35 +428,38 @@ a {
           .container .main .cards__item__body__description {
             min-height: 135px; } }
 
-@media (max-width: 992px) {
+@media (max-width: 480px) {
   .container {
-    width: 716px;
-    margin-top: 0; }
+    width: 480px; }
     .container .header {
-      flex-direction: row;
-      width: 100%;
-      margin-right: 0;
-      justify-content: space-between;
-      padding: 20px 0; }
+      width: auto;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center; }
       .container .header .logo {
-        margin: 0; }
-      .container .header .menu {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 500px;
-        margin-top: 0; }
-        .container .header .menu__item {
-          margin-bottom: 0;
-          width: 100px;
-          justify-content: center; }
-          .container .header .menu__item-link {
-            flex-direction: column; }
-            .container .header .menu__item-link::before {
-              margin-right: 0;
-              margin-bottom: 10px; }
-      .container .header .tweet {
-        display: none; }
+        margin-top: 20px; }
     .container .main {
-      width: 716px; } }
+      margin: 0;
+      width: auto; }
+      .container .main .baner {
+        width: auto;
+        min-height: 370px;
+        background-size: 110% 100%; }
+      .container .main .subscribe__description {
+        width: 366px;
+        margin-right: 47px; }
+      .container .main .input__email {
+        width: 211px;
+        margin-right: 56px; }
+      .container .main .cards {
+        justify-content: center; }
+        .container .main .cards__item {
+          width: 375px;
+          margin-bottom: 30px; }
+          .container .main .cards__item:last-child {
+            margin-bottom: 0; }
+          .container .main .cards__item__img {
+            height: 200px; }
+          .container .main .cards__item__body__description {
+            min-height: auto; } }
