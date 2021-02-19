@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/dante9990/Soldatov_tasks#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
   }
 }

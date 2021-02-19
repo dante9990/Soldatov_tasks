@@ -1,0 +1,78 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 1088px;
+    margin-top: 40px;
+    border-top: 2px solid #E5E5E5;
+    &__information {
+        display: flex;
+        flex-wrap: wrap;
+        width: 220px;
+        padding: 0;
+        margin: 0;
+        margin-left: 5px;
+    }
+    &__link {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        
+    }
+    &__link a {
+        margin-right: 5px;
+        font-style: normal;
+        font-size: 12px;
+        color: #34ACA7;
+    }
+    &__link li::after {
+        content: '|';
+        padding: 0;
+        position: absolute;
+        margin-left: -4px;
+        color: #e5e5e5;
+    }
+    &__link li:last-child::after {
+        content: none;
+    }
+    &__copyright {
+        font-style: normal;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.02em;
+        color: #E5E5E5;
+    }
+    .social {
+        display: flex;
+        margin-right: 5px;
+        & .footer__link {
+            margin-top: 10px;
+        }
+        &__img {
+            margin-left: 5px;
+            width: 32px;
+            height: 32px;
+        }
+        
+        .twitter-gray {
+            background: url('../img/twitter-icon-gray.svg');
+        }
+        
+        .fb {
+            background: url('../img/fb-icon.svg');
+        }
+        
+        .rss {
+            background: url('../img/rss-icon.svg');
+        }
+        
+        & .footer__link li::after {
+            content: none;
+        }
+    }
+}

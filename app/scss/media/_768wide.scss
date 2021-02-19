@@ -1,0 +1,70 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+        .header {
+            width: auto;
+            margin-bottom: 20px;
+            .menu {
+                width: 425px;
+                height: auto;
+                padding: 0;
+                margin-left: 10px;
+                justify-content: space-between;
+                &__item {
+                    width: auto;
+                    margin: 0;
+                    &-link::before {
+                        content: none;
+                    }
+                }
+            }
+        }
+        .main {
+            width: auto;
+            margin: 0 10px;
+            .baner {
+                flex-direction: column-reverse;
+                background-size: 100% 100%;
+                min-height: 353px;
+                &__item {
+                    margin-top: 0;
+                    width: auto;
+                    &__title {
+                        width: auto;
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .tabs {
+                display: none;
+            }
+            .subscribe {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-left: 18px;
+                &__description {
+                    width: 475px;
+                }
+                .input__email {
+                    width: 395px;
+                    margin-right: 36px;
+                }
+            }
+            .cards {
+                margin-top: 25px;
+                &__item {
+                    width: 256px;
+                    justify-content: start;
+                    margin-bottom: 15px;
+                    &__img {
+                        height: 150px;
+                    }
+                    &__body__description {
+                        min-height: 135px;
+                    }
+                }
+            }
+        }    
+    }
+
+}
