@@ -2,7 +2,7 @@
     .container {
         width: 480px;
         .header {
-            width: 100%;
+            width: 480px;
             flex-wrap: wrap;
             flex-direction: column-reverse;
             align-items: center;
@@ -10,12 +10,15 @@
             .logo {
                 margin-top: 20px;
             }
+            .menu {
+                margin-left: 0;
+            }
         }
         .main {
             margin: 0;
-            width: auto;
+            width: 480px;
             .baner {
-                width: auto;
+                width: 480px;
                 min-height: 370px;
                 background-size: 110% 100%;
             }
@@ -23,10 +26,14 @@
                 width: 366px;
                 margin-right: 47px;
             }
-            .input__email {
-                width: 211px;
-                margin-right: 56px;
+            .subscribe__form {
+                width: 350px;
+                .input__email {
+                    width: 211px;
+                    margin-right: 56px;
+                }
             }
+            
             .cards {
                 justify-content: center;
                 &__item {
