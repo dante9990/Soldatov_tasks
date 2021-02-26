@@ -1,10 +1,31 @@
-
+@import "media_mixin";
 
 .header {
     width: 140px;
     display: flex;
     flex-direction: column;
     margin-right: 50px;
+    @include _1176 {
+        margin-right: 40px;
+    }
+    @include _992 {
+        flex-direction: row;
+        width: 100%;
+        margin-right: 0;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    @include _768 {
+        width: auto;
+        margin-bottom: 20px;
+    }
+    @include _480 {
+        width: 480px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
 
     .logo {
         width: 120px;
@@ -12,6 +33,14 @@
         margin-left: 10px;
         margin-right: 10px;
         background: url("../img/icon-logo.svg");
+
+        @include _992 {
+            margin: 0;
+        }
+
+        @include _480 {
+            margin-top: 20px;
+        }
     }
 
     .menu {
@@ -19,15 +48,53 @@
         flex-direction: column;
         width: auto;
         margin-top: 5px;
+
+        @include _992 {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 500px;
+            margin-top: 0;
+        }
+
+        @include _768 {
+            width: 425px;
+            height: auto;
+            padding: 0;
+            margin-left: 10px;
+            justify-content: space-between;
+        }
+
+        @include _480 {
+            margin-left: 0;
+        }
+
         &__item {
             display: flex;
             margin-bottom: 30px;
             flex-direction: row;
+
+            @include _992 {
+                margin-bottom: 0;
+                width: 100px;
+                justify-content: center;
+            }
+
+            @include _768 {
+                width: auto;
+                margin: 0;
+            }
+
             &-link {
                 font-size: 14px;
                 color: $colorLink;
                 display: flex;
                 align-items: center;
+
+                @include _992 {
+                    flex-direction: column;
+                }
             }
             &-link::before {
                 content: "";
@@ -36,25 +103,20 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 margin-right: 15px;
-            }
-            &-link--tastemakers::before {
-                background: url("../img/food-icon.svg") no-repeat;
-            }
 
-            &-link--blog::before {
-                background: url("../img/blog-icon.svg");
-            }
+                @include _992 {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
 
-            &-link--a-list::before {
-                background: url("../img/a-list-icon.svg");
+                @include _768 {
+                    content: none;
+                }
             }
-
-            &-link--contribure::before {
-                background: url("../img/camera-icon.svg");
-            }
-
-            &-link--about::before {
-                background: url("../img/about-icon.svg");
+            @each $icon in tastemakers, blog, a-list, camera, about {
+                &-link--#{$icon}::before {
+                    background: url("../img/#{$icon}-icon.svg") no-repeat;
+                }
             }
         }
         &__item:hover {
@@ -65,6 +127,11 @@
     .tweet {
         display: flex;
         flex-direction: column;
+
+        @include _992 {
+            display: none;
+        }
+
         &__item {
             display: flex;
             flex-direction: column;
@@ -97,13 +164,6 @@
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    &-img {
-                        height: 16px;
-                        width: 16px;
-                        margin-right: 5px;
-                        margin-left: 5px;
-                        background: url("../img/twitter-icon.svg");
-                    }
                 }
                 &:last-child {
                     margin-top: 15px;
@@ -114,14 +174,14 @@
             }
             &:last-child {
                 margin-top: 10px;
-            } 
+            }
+            &__link-img {
+                height: 16px;
+                width: 16px;
+                margin-right: 5px;
+                margin-left: 5px;
+                background: url("../img/twitter-icon.svg");
+            }
         }
-        
     }
 }
-
-/* .border__bottom {
-    width: 140px;
-    border-bottom: 1px dashed #E5E5E5;
-    padding-bottom: 5px;
-} */

@@ -30,7 +30,7 @@ function watch() {
         }
     });
     gulp.watch('app/scss/**/*.scss', style)
-    gulp.watch('./.html').on('change',browserSync.reload);
+    gulp.watch('app/*.html').on('change',browserSync.reload);
     gulp.watch('./js/*/.js').on('change', browserSync.reload);
 }
 
@@ -38,6 +38,3 @@ exports.style = style;
 exports.watch = watch;
 exports.build = series(style, build);
 exports.default = series(parallel(style, watch));
-
-// exports.build = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-// exports.default = series(parallel(style, watch));

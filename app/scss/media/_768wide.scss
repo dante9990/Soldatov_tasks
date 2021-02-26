@@ -26,13 +26,13 @@
                 flex-direction: column-reverse;
                 background-size: 100% 100%;
                 min-height: 353px;
-                &__item {
+                &__text {
                     margin-top: 0;
                     width: auto;
-                    &__title {
-                        width: auto;
-                        opacity: 0.5;
-                    }
+                }
+                &__title {
+                    width: auto;
+                    opacity: 0.5;
                 }
             }
             .tabs {
