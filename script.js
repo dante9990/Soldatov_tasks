@@ -4,18 +4,24 @@
     let arr = [1, 2, 2, 2, 3];
     let arrDel = [2, 9, 99, -1];
 
-    let getChange = function (item, list) {
+    let findIndex = function (item, list) {
         for (let i = 0; i < list.length; i++) {
             if (list[i] === item) return true;
         }
         return false;
     }
 
-    let arrDiff = arr.filter(i => !getChange(i, arrDel));
+
+    let deleteElement = function(array, arrayDelete) {
+        let arrDiff = array.filter(i => !findIndex(i, arrayDelete));
+
+        return arrDiff;
+    }
+    
 
     console.log(arr);
     console.log(arrDel);
-    console.log(arrDiff);
+    console.log(deleteElement(arr,arrDel));
 })();
 
 (function () {
@@ -28,6 +34,7 @@
             .join(' ');
     }
 
+    console.log(sentence);
     console.log(alphabetPosition(sentence));
 })();
 
