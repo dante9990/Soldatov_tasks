@@ -12,26 +12,40 @@
     }
 
 
-    let deleteElement = function(array, arrayDelete) {
+    let deleteElement = function (array, arrayDelete) {
         let arrDiff = array.filter(i => !findIndex(i, arrayDelete));
 
         return arrDiff;
     }
-    
+
 
     console.log(arr);
     console.log(arrDel);
-    console.log(deleteElement(arr,arrDel));
+    console.log(deleteElement(arr, arrDel));
 })();
 
 (function () {
     let sentence = "The sunset sets at twelve o' clock.";
 
     let alphabetPosition = function (string) {
-        return string.toLowerCase().split('')
-            .filter(c => c >= 'a' & c <= 'z')
-            .map(c => c.charCodeAt(0) - 'a'.charCodeAt(0) + 1)
-            .join(' ');
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] >= 'a' & string[i] <= 'z') {
+                return string.toLowerCase().split('')
+                    .filter(c => c >= 'a' & c <= 'z')
+                    .map(c => c.charCodeAt(0) - 'a'.charCodeAt(0) + 1)
+                    .join(' ');
+            }
+            else if (string[i] >= 'а' & string[i] <= 'я') {
+                return string.toLowerCase().split('')
+                    .filter(c => c >= 'а' & c <= 'я')
+                    .map(c => c.charCodeAt(0) - 'а'.charCodeAt(0) + 1)
+                    .join(' ');
+            }
+        }
+
+
+
+
     }
 
     console.log(sentence);
