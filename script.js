@@ -1,52 +1,47 @@
 'use strict';
 
 (function () {
-    let arr = [1, 2, 2, 2, 3];
-    let arrDel = [2, 9, 99, -1];
 
-    let findIndex = function (item, list) {
+    let findIndex = function (list, listDel) {
+        let arrDiff = [];
         for (let i = 0; i < list.length; i++) {
-            if (list[i] === item) return true;
+            if (listDel.indexOf(list[i]) === -1)
+                arrDiff.push(list[i]);
         }
-        return false;
-    }
-
-
-    let deleteElement = function (array, arrayDelete) {
-        let arrDiff = array.filter(i => !findIndex(i, arrayDelete));
-
         return arrDiff;
     }
 
+    let arr = [1, 2, 2, 2, 3];
+    let arrDel = [2, 9, 99, -1];
 
     console.log(arr);
     console.log(arrDel);
-    console.log(deleteElement(arr, arrDel));
+    console.log(findIndex(arr, arrDel));
 })();
 
 (function () {
-    let sentence = "The sunset sets at twelve o' clock.";
 
     let alphabetPosition = function (string) {
-        for (let i = 0; i < string.length; i++) {
-            if (string[i] >= 'a' & string[i] <= 'z') {
-                return string.toLowerCase().split('')
-                    .filter(c => c >= 'a' & c <= 'z')
-                    .map(c => c.charCodeAt(0) - 'a'.charCodeAt(0) + 1)
-                    .join(' ');
-            }
-            else if (string[i] >= 'а' & string[i] <= 'я') {
-                return string.toLowerCase().split('')
-                    .filter(c => c >= 'а' & c <= 'я')
-                    .map(c => c.charCodeAt(0) - 'а'.charCodeAt(0) + 1)
-                    .join(' ');
+
+        let firstLetters = 'a';
+        let lastLetters = 'z';
+        let stringLowerCase = string.toLowerCase();
+
+        for (let i = 0; i < stringLowerCase.length; i++) {
+            if (stringLowerCase[i] >= 'а' && stringLowerCase[i] <= 'я') {
+                firstLetters = 'а';
+                lastLetters = 'я';
             }
         }
 
-
-
+        return stringLowerCase.split('')
+            .filter(char => char >= firstLetters && char <= lastLetters)
+            .map(char => char.charCodeAt(0) - firstLetters.charCodeAt(0) + 1)
+            .join(' ');
 
     }
+
+    let sentence = "The sunset sets at twelve o' clock.";
 
     console.log(sentence);
     console.log(alphabetPosition(sentence));
@@ -54,14 +49,43 @@
 
 (function () {
     let squareEveryDigit = function (number) {
-        var arr = [];
-        var splitNum = number.toString();
-        for (var i = 0; i < splitNum.length; i++) {
-            arr.push(Math.pow(splitNum.charAt(i), 2))
+        const DEGREE = 2;
+        let arr = [];
+        let splitNum = number.toString();
+        for (let i = 0; i < splitNum.length; i++) {
+            arr.push(Math.pow(splitNum[i], DEGREE))
         }
         return arr.join('');
     }
 
 
+    let squareEveryDigit2 = function (number) {
+        let arr = [];
+        let splitNum = number.toString();
+        for (let i = 0; i < splitNum.length; i++) {
+            arr.push(splitNum[i]);
+        }
+        let mapped = arr.map(x => Math.pow(x, 2));
+        return mapped.join('');
+    }
+
+
+    let squareEveryDigit3 = function (number) {
+        let numbers = [];
+        let splitNum = number.toString();
+        for (let i = 0; i < splitNum.length; i++) {
+            numbers.push(splitNum[i]);
+        }
+        numbers.forEach(function (element, index, array) {
+            array[index] = element * element;
+        });
+        return numbers.join('');
+
+    }
+
+
+
     console.log(squareEveryDigit(9119));
+    console.log(squareEveryDigit2(9119));
+    console.log(squareEveryDigit3(9119))
 })();
