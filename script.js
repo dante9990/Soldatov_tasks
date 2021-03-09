@@ -48,8 +48,8 @@
 })();
 
 (function () {
+    const DEGREE = 2;
     let squareEveryDigit = function (number) {
-        const DEGREE = 2;
         let arr = [];
         let splitNum = number.toString();
         for (let i = 0; i < splitNum.length; i++) {
@@ -65,7 +65,7 @@
         for (let i = 0; i < splitNum.length; i++) {
             arr.push(splitNum[i]);
         }
-        let mapped = arr.map(x => Math.pow(x, 2));
+        let mapped = arr.map(item => Math.pow(item, DEGREE));
         return mapped.join('');
     }
 
@@ -77,7 +77,7 @@
             numbers.push(splitNum[i]);
         }
         numbers.forEach(function (element, index, array) {
-            array[index] = element * element;
+            array[index] = Math.pow(element, DEGREE);
         });
         return numbers.join('');
 
