@@ -60,26 +60,18 @@
 
 
     let squareEveryDigit2 = function (number) {
-        let arr = [];
-        let splitNum = number.toString();
-        for (let i = 0; i < splitNum.length; i++) {
-            arr.push(splitNum[i]);
-        }
-        let mapped = arr.map(item => Math.pow(item, DEGREE));
+        let splitNum = number.toString().split('');
+        let mapped = splitNum.map(item => Math.pow(item, DEGREE));
         return mapped.join('');
     }
 
 
     let squareEveryDigit3 = function (number) {
-        let numbers = [];
-        let splitNum = number.toString();
-        for (let i = 0; i < splitNum.length; i++) {
-            numbers.push(splitNum[i]);
-        }
-        numbers.forEach(function (element, index, array) {
+        let splitNum = number.toString().split('');
+        splitNum.forEach(function (element, index, array) {
             array[index] = Math.pow(element, DEGREE);
         });
-        return numbers.join('');
+        return splitNum.join('');
 
     }
 
