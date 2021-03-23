@@ -3,6 +3,7 @@ let context = canvas.getContext('2d');
 
 let grid = 16;
 let count = 0;
+let score = 0;
 
 let snake = {
     x: 160,
@@ -22,10 +23,30 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function drawScore() {
+    context.font = '16px Arial';
+    context.fillStyle = '#fff';
+    context.fillText('Score: '+ score, 8, 20);
+}
+
 function loop() {
     requestAnimationFrame(loop);
 
-    if (++count < 4) {
+    let speed = 10;
+
+    if(score > 5) {
+        speed = 8;
+    }
+
+    if(score > 10) {
+        speed = 6;
+    }
+
+    if(score > 15) {
+        speed = 4;
+    }
+
+    if (++count < speed) {
         return;
     }
 
@@ -56,14 +77,15 @@ function loop() {
         snake.cells.pop();
     }
 
-    context.fillStyle = 'red';
+    context.fillStyle = 'white';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
-    context.fillStyle = 'green';
+    context.fillStyle = 'white';
     snake.cells.forEach(function (cell, index) {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
         if (cell.x === apple.x && cell.y === apple.y) {
             snake.maxCells++;
+            score++;
 
             apple.x = getRandomInt(0, 25) * grid;
             apple.y = getRandomInt(0, 25) * grid;
@@ -80,9 +102,12 @@ function loop() {
 
                 apple.x = getRandomInt(0, 25) * grid;
                 apple.y = getRandomInt(0, 25) * grid;
+
+                score = 0;
             }
         }
     });
+    drawScore();
 }
 
 document.addEventListener('keydown', function (e) {
@@ -100,5 +125,7 @@ document.addEventListener('keydown', function (e) {
         snake.dy = grid; snake.dx = 0;
     }
 });
+
+
 
 requestAnimationFrame(loop);
