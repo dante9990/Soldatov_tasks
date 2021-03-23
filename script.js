@@ -26,6 +26,21 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function resetPosition() {
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
+
+    apple.x = getRandomInt(0, 25) * grid;
+    apple.y = getRandomInt(0, 25) * grid;
+
+    score = 0;
+    speed = 10;
+}
+
 function drawScore() {
     context.font = '16px Arial';
     context.fillStyle = '#fff';
@@ -37,15 +52,15 @@ function loop() {
 
     let speed = 10;
 
-    if(score > 5) {
+    if (score > 5) {
         speed = 8;
     }
 
-    if(score > 10) {
+    if (score > 10) {
         speed = 6;
     }
 
-    if(score > 15) {
+    if (score > 15) {
         speed = 4;
     }
 
@@ -80,7 +95,7 @@ function loop() {
         snake.cells.pop();
     }
 
-    context.fillStyle = 'white';
+    context.fillStyle = 'red';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
     context.fillStyle = 'white';
@@ -96,18 +111,7 @@ function loop() {
 
         for (let i = index + 1; i < snake.cells.length; i++) {
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                snake.x = 160;
-                snake.y = 160;
-                snake.cells = [];
-                snake.maxCells = 4;
-                snake.dx = grid;
-                snake.dy = 0;
-
-                apple.x = getRandomInt(0, 25) * grid;
-                apple.y = getRandomInt(0, 25) * grid;
-
-                score = 0;
-                speed = 10;
+                resetPosition();
             }
         }
     });
@@ -138,17 +142,20 @@ buttonStart.addEventListener('click', () => {
 });
 
 buttonReset.addEventListener('click', () => {
-    snake.x = 160;
-    snake.y = 160;
-    snake.cells = [];
-    snake.maxCells = 4;
-    snake.dx = grid;
-    snake.dy = 0;
-
-    apple.x = getRandomInt(0, 25) * grid;
-    apple.y = getRandomInt(0, 25) * grid;
-
-    score = 0;
-    speed = 10;
+    resetPosition();
 })
 
+// if (snake.x < 0) {
+//     snake.x = canvas.width - grid;
+// }
+// else if (snake.x >= canvas.width) {
+//     snake.x = 0;
+// }
+
+// if (snake.y < 0) {
+//     snake.y = canvas.height - grid;
+// }
+
+// else if (snake.y >= canvas.height) {
+//     snake.y = 0;
+// }
