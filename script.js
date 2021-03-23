@@ -1,9 +1,12 @@
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
+let buttonStart = document.getElementById('start');
+let buttonReset = document.getElementById('reset');
 
 let grid = 16;
 let count = 0;
 let score = 0;
+let speed = 10;
 
 let snake = {
     x: 160,
@@ -26,7 +29,7 @@ function getRandomInt(min, max) {
 function drawScore() {
     context.font = '16px Arial';
     context.fillStyle = '#fff';
-    context.fillText('Score: '+ score, 8, 20);
+    context.fillText(`Score: ${score}`, 8, 20);
 }
 
 function loop() {
@@ -46,7 +49,7 @@ function loop() {
         speed = 4;
     }
 
-    if (++count < speed) {
+    if (count++ < speed) {
         return;
     }
 
@@ -104,6 +107,7 @@ function loop() {
                 apple.y = getRandomInt(0, 25) * grid;
 
                 score = 0;
+                speed = 10;
             }
         }
     });
@@ -126,6 +130,25 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+buttonReset.hidden = true;
+buttonStart.addEventListener('click', () => {
+    requestAnimationFrame(loop);
+    buttonReset.hidden = false;
+    buttonStart.hidden = true;
+});
 
+buttonReset.addEventListener('click', () => {
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
 
-requestAnimationFrame(loop);
+    apple.x = getRandomInt(0, 25) * grid;
+    apple.y = getRandomInt(0, 25) * grid;
+
+    score = 0;
+    speed = 10;
+})
+
