@@ -13,8 +13,10 @@ body {
     background-color: #000;
 }
 
+
+
 .canvas {
-    border: 1px solid #fff;
+    border: 1px solid rgb(161, 14, 14);
 }
 
 .btn {
@@ -25,4 +27,15 @@ body {
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 0;
+}
+
+.score,
+.legend {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #fff;
+}
+
+.legend {
+    margin-top: 10px;
 }

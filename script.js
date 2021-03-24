@@ -2,11 +2,15 @@ let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 let buttonStart = document.getElementById('start');
 let buttonReset = document.getElementById('reset');
+let spanScore = document.getElementById('score');
+let message = document.getElementById('message');
 
 let grid = 16;
 let count = 0;
 let score = 0;
 let speed = 10;
+
+
 
 let snake = {
     x: 160,
@@ -42,15 +46,11 @@ function resetPosition() {
 }
 
 function drawScore() {
-    context.font = '16px Arial';
-    context.fillStyle = '#fff';
-    context.fillText(`Score: ${score}`, 8, 20);
+    spanScore.textContent = `Score: ${score}`;
 }
 
 function loop() {
     requestAnimationFrame(loop);
-
-    let speed = 10;
 
     if (score > 5) {
         speed = 8;
@@ -74,20 +74,39 @@ function loop() {
     snake.x += snake.dx;
     snake.y += snake.dy;
 
-    if (snake.x < 0) {
-        snake.x = canvas.width - grid;
-    }
-    else if (snake.x >= canvas.width) {
-        snake.x = 0;
+    if (score < 3) {
+        canvas.style.border = '1px solid rgb(161, 14, 14)';
+        message.textContent = '';
+
+        if (snake.x < 0 || snake.x >= canvas.width) {
+            resetPosition();
+        }
+
+        if (snake.y < 0 || snake.y >= canvas.height) {
+            resetPosition();
+        }
+    } else {
+        canvas.style.border = '1px solid white';
+        message.textContent = 'Стены больше не преграда!';
+
+        if (snake.x < 0) {
+            snake.x = canvas.width - grid;
+        }
+        else if (snake.x >= canvas.width) {
+            snake.x = 0;
+        }
+
+        if (snake.y < 0) {
+            snake.y = canvas.height - grid;
+        }
+
+        else if (snake.y >= canvas.height) {
+            snake.y = 0;
+        }
     }
 
-    if (snake.y < 0) {
-        snake.y = canvas.height - grid;
-    }
 
-    else if (snake.y >= canvas.height) {
-        snake.y = 0;
-    }
+
 
     snake.cells.unshift({ x: snake.x, y: snake.y });
 
@@ -95,7 +114,7 @@ function loop() {
         snake.cells.pop();
     }
 
-    context.fillStyle = 'red';
+    context.fillStyle = 'green';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
     context.fillStyle = 'white';
@@ -124,13 +143,16 @@ document.addEventListener('keydown', function (e) {
         snake.dy = 0;
     }
     else if (e.which === 38 && snake.dy === 0) {
-        snake.dy = -grid; snake.dx = 0;
+        snake.dy = -grid;
+        snake.dx = 0;
     }
     else if (e.which === 39 && snake.dx === 0) {
-        snake.dx = grid; snake.dy = 0;
+        snake.dx = grid;
+        snake.dy = 0;
     }
     else if (e.which === 40 && snake.dy === 0) {
-        snake.dy = grid; snake.dx = 0;
+        snake.dy = grid;
+        snake.dx = 0;
     }
 });
 
@@ -144,18 +166,3 @@ buttonStart.addEventListener('click', () => {
 buttonReset.addEventListener('click', () => {
     resetPosition();
 })
-
-// if (snake.x < 0) {
-//     snake.x = canvas.width - grid;
-// }
-// else if (snake.x >= canvas.width) {
-//     snake.x = 0;
-// }
-
-// if (snake.y < 0) {
-//     snake.y = canvas.height - grid;
-// }
-
-// else if (snake.y >= canvas.height) {
-//     snake.y = 0;
-// }
