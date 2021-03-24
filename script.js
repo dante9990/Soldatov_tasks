@@ -86,10 +86,12 @@ function loop() {
 
         if (snake.x < 0 || snake.x >= canvas.width) {
             resetPosition();
+            alert('GAME OVER');
         }
 
         if (snake.y < 0 || snake.y >= canvas.height) {
             resetPosition();
+            alert('GAME OVER');
         }
     } else {
         canvas.style.border = '1px solid white';
@@ -139,6 +141,7 @@ function loop() {
         for (let i = index + 1; i < snake.cells.length; i++) {
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 resetPosition();
+                alert('GAME OVER');
             }
         }
     });
@@ -189,10 +192,4 @@ buttonPause.addEventListener('click', () => {
     }
     
 });
-
-// buttonContinue.addEventListener('click', () => {
-//     buttonContinue.hidden = true;
-//     buttonPause.hidden = false;
-//     pause = false;
-// })
 
