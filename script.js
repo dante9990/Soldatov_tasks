@@ -2,6 +2,8 @@ let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 let buttonStart = document.getElementById('start');
 let buttonReset = document.getElementById('reset');
+let buttonPause = document.getElementById('pause');
+let buttonContinue = document.getElementById('continue');
 let spanScore = document.getElementById('score');
 let message = document.getElementById('message');
 
@@ -9,7 +11,7 @@ let grid = 16;
 let count = 0;
 let score = 0;
 let speed = 10;
-
+let pause = false;
 
 
 let snake = {
@@ -45,6 +47,7 @@ function resetPosition() {
     speed = 10;
 }
 
+
 function drawScore() {
     spanScore.textContent = `Score: ${score}`;
 }
@@ -71,8 +74,11 @@ function loop() {
     count = 0;
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    snake.x += snake.dx;
-    snake.y += snake.dy;
+    if (!pause) {
+        snake.x += snake.dx;
+        snake.y += snake.dy;
+    }
+
 
     if (score < 3) {
         canvas.style.border = '1px solid rgb(161, 14, 14)';
@@ -107,12 +113,14 @@ function loop() {
 
 
 
+    if (!pause) {
+        snake.cells.unshift({ x: snake.x, y: snake.y });
 
-    snake.cells.unshift({ x: snake.x, y: snake.y });
-
-    if (snake.cells.length > snake.maxCells) {
-        snake.cells.pop();
+        if (snake.cells.length > snake.maxCells) {
+            snake.cells.pop();
+        }
     }
+
 
     context.fillStyle = 'green';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
@@ -157,12 +165,34 @@ document.addEventListener('keydown', function (e) {
 });
 
 buttonReset.hidden = true;
+buttonPause.hidden = true;
 buttonStart.addEventListener('click', () => {
     requestAnimationFrame(loop);
     buttonReset.hidden = false;
+    buttonPause.hidden = false;
     buttonStart.hidden = true;
 });
 
 buttonReset.addEventListener('click', () => {
     resetPosition();
-})
+    pause = false;
+});
+
+buttonPause.addEventListener('click', () => {
+    if(buttonPause.value == 'Pause') {
+        pause = true;
+        buttonPause.value = 'Continue';
+    }
+    else {
+        pause = false;
+        buttonPause.value = 'Pause';
+    }
+    
+});
+
+// buttonContinue.addEventListener('click', () => {
+//     buttonContinue.hidden = true;
+//     buttonPause.hidden = false;
+//     pause = false;
+// })
+
