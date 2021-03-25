@@ -28,6 +28,11 @@ let apple = {
     y: 320
 };
 
+let goldApple = {
+    x: 160,
+    y: 160
+}
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -80,7 +85,7 @@ function loop() {
     }
 
 
-    if (score < 3) {
+    if (score < 15) {
         canvas.style.border = '1px solid rgb(161, 14, 14)';
         message.textContent = '';
 
@@ -127,6 +132,12 @@ function loop() {
     context.fillStyle = 'green';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
+    if (score % 5 == 0 && score != 0) {
+        context.fillStyle = 'gold';
+        context.fillRect(goldApple.x, goldApple.y, grid, grid);
+    }
+
+
     context.fillStyle = 'white';
     snake.cells.forEach(function (cell, index) {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
@@ -136,6 +147,13 @@ function loop() {
 
             apple.x = getRandomInt(0, 25) * grid;
             apple.y = getRandomInt(0, 25) * grid;
+        }
+
+        if (cell.x === goldApple.x && cell.y === goldApple.y && score%5 == 0) {
+            snake.maxCells++;
+            score += 3;
+            goldApple.x = getRandomInt(0, 25) * grid;
+            goldApple.y = getRandomInt(0, 25) * grid;
         }
 
         for (let i = index + 1; i < snake.cells.length; i++) {
@@ -182,7 +200,7 @@ buttonReset.addEventListener('click', () => {
 });
 
 buttonPause.addEventListener('click', () => {
-    if(buttonPause.value == 'Pause') {
+    if (buttonPause.value == 'Pause') {
         pause = true;
         buttonPause.value = 'Continue';
     }
@@ -190,6 +208,6 @@ buttonPause.addEventListener('click', () => {
         pause = false;
         buttonPause.value = 'Pause';
     }
-    
+
 });
 
