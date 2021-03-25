@@ -80,11 +80,17 @@ function loop() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!pause) {
+        //движение и отрисовка змейки
         snake.x += snake.dx;
         snake.y += snake.dy;
+        snake.cells.unshift({ x: snake.x, y: snake.y });
+
+        if (snake.cells.length > snake.maxCells) {
+            snake.cells.pop();
+        }
     }
 
-
+    //взаимодействие со стенами
     if (score < 15) {
         canvas.style.border = '1px solid rgb(161, 14, 14)';
         message.textContent = '';
@@ -118,17 +124,6 @@ function loop() {
         }
     }
 
-
-
-    if (!pause) {
-        snake.cells.unshift({ x: snake.x, y: snake.y });
-
-        if (snake.cells.length > snake.maxCells) {
-            snake.cells.pop();
-        }
-    }
-
-
     context.fillStyle = 'green';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
 
@@ -155,7 +150,7 @@ function loop() {
             goldApple.x = getRandomInt(0, 25) * grid;
             goldApple.y = getRandomInt(0, 25) * grid;
         }
-
+        //проверка на столкновение змейки с собой
         for (let i = index + 1; i < snake.cells.length; i++) {
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 resetPosition();
