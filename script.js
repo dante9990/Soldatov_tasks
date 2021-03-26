@@ -53,6 +53,7 @@ function resetPosition() {
 }
 
 function interactionSnake() {
+    context.fillStyle = 'white';
     snake.cells.forEach(function (cell, index) {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
         if (cell.x === apple.x && cell.y === apple.y) {
@@ -77,6 +78,40 @@ function interactionSnake() {
             }
         }
     });
+}
+
+function interactionWalls() {
+    if (score < 15) {
+        canvas.style.border = '1px solid rgb(161, 14, 14)';
+        message.textContent = '';
+
+        if (snake.x < 0 || snake.x >= canvas.width) {
+            resetPosition();
+            alert('GAME OVER');
+        }
+
+        if (snake.y < 0 || snake.y >= canvas.height) {
+            resetPosition();
+            alert('GAME OVER');
+        }
+    } else {
+        canvas.style.border = '1px solid white';
+        message.textContent = 'Стены больше не преграда!';
+
+        if (snake.x < 0) {
+            snake.x = canvas.width - grid;
+        }
+        else if (snake.x >= canvas.width) {
+            snake.x = 0;
+        }
+        // Делаем то же самое для движения по вертикали
+        if (snake.y < 0) {
+            snake.y = canvas.height - grid;
+        }
+        else if (snake.y >= canvas.height) {
+            snake.y = 0;
+        }
+    }
 }
 
 
@@ -112,40 +147,7 @@ function loop() {
         snake.y += snake.dy;
 
     }
-
-    //взаимодействие со стенами
-    if (score < 15) {
-        canvas.style.border = '1px solid rgb(161, 14, 14)';
-        message.textContent = '';
-
-        if (snake.x < 0 || snake.x >= canvas.width) {
-            resetPosition();
-            alert('GAME OVER');
-        }
-
-        if (snake.y < 0 || snake.y >= canvas.height) {
-            resetPosition();
-            alert('GAME OVER');
-        }
-    } else {
-        canvas.style.border = '1px solid white';
-        message.textContent = 'Стены больше не преграда!';
-
-        if (snake.x < 0) {
-            snake.x = canvas.width - grid;
-        }
-        else if (snake.x >= canvas.width) {
-            snake.x = 0;
-        }
-        // Делаем то же самое для движения по вертикали
-        if (snake.y < 0) {
-            snake.y = canvas.height - grid;
-        }
-        else if (snake.y >= canvas.height) {
-            snake.y = 0;
-        }
-    }
-
+    interactionWalls();
     if (!pause) {
         //отрисовка змейки
         snake.cells.unshift({ x: snake.x, y: snake.y });
@@ -164,8 +166,6 @@ function loop() {
         context.fillRect(goldApple.x, goldApple.y, grid, grid);
     }
 
-
-    context.fillStyle = 'white';
     interactionSnake();
     drawScore();
 }
