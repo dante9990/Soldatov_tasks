@@ -52,6 +52,33 @@ function resetPosition() {
     speed = 10;
 }
 
+function interactionSnake() {
+    snake.cells.forEach(function (cell, index) {
+        context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+        if (cell.x === apple.x && cell.y === apple.y) {
+            snake.maxCells++;
+            score++;
+
+            apple.x = getRandomInt(0, 25) * grid;
+            apple.y = getRandomInt(0, 25) * grid;
+        }
+
+        if (cell.x === goldApple.x && cell.y === goldApple.y && score % 5 == 0) {
+            snake.maxCells++;
+            score += 3;
+            goldApple.x = getRandomInt(0, 25) * grid;
+            goldApple.y = getRandomInt(0, 25) * grid;
+        }
+        //проверка на столкновение змейки с собой
+        for (let i = index + 1; i < snake.cells.length; i++) {
+            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                resetPosition();
+                alert('GAME OVER');
+            }
+        }
+    });
+}
+
 
 function drawScore() {
     spanScore.textContent = `Score: ${score}`;
@@ -80,14 +107,10 @@ function loop() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!pause) {
-        //движение и отрисовка змейки
+        //движение змейки
         snake.x += snake.dx;
         snake.y += snake.dy;
-        snake.cells.unshift({ x: snake.x, y: snake.y });
 
-        if (snake.cells.length > snake.maxCells) {
-            snake.cells.pop();
-        }
     }
 
     //взаимодействие со стенами
@@ -114,15 +137,24 @@ function loop() {
         else if (snake.x >= canvas.width) {
             snake.x = 0;
         }
-
+        // Делаем то же самое для движения по вертикали
         if (snake.y < 0) {
             snake.y = canvas.height - grid;
         }
-
         else if (snake.y >= canvas.height) {
             snake.y = 0;
         }
     }
+
+    if (!pause) {
+        //отрисовка змейки
+        snake.cells.unshift({ x: snake.x, y: snake.y });
+
+        if (snake.cells.length > snake.maxCells) {
+            snake.cells.pop();
+        }
+    }
+
 
     context.fillStyle = 'green';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
@@ -134,30 +166,7 @@ function loop() {
 
 
     context.fillStyle = 'white';
-    snake.cells.forEach(function (cell, index) {
-        context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
-        if (cell.x === apple.x && cell.y === apple.y) {
-            snake.maxCells++;
-            score++;
-
-            apple.x = getRandomInt(0, 25) * grid;
-            apple.y = getRandomInt(0, 25) * grid;
-        }
-
-        if (cell.x === goldApple.x && cell.y === goldApple.y && score%5 == 0) {
-            snake.maxCells++;
-            score += 3;
-            goldApple.x = getRandomInt(0, 25) * grid;
-            goldApple.y = getRandomInt(0, 25) * grid;
-        }
-        //проверка на столкновение змейки с собой
-        for (let i = index + 1; i < snake.cells.length; i++) {
-            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                resetPosition();
-                alert('GAME OVER');
-            }
-        }
-    });
+    interactionSnake();
     drawScore();
 }
 
