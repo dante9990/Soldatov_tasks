@@ -1,0 +1,49 @@
+@import "./../../mixin/mediaMixin.scss";
+
+.statusContainer {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    &:first-child {
+        margin-top: 20px;
+    }
+
+    @include _768 {
+        width: 280px;
+    }
+
+    @include _360 {
+        &:last-child {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.statusTitle {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.statusСapacity {
+    margin-top: 5px;
+    height: 10px;
+    width: 340px;
+    border: 1px solid #000;
+    @include _768 {
+        width: 280px;
+    }
+}
+
+@each $selector, $color in (hp, #e74c3c), (thr, #3498db), (hungry, #e67e22), (energy, #95a5a6) {
+    .statusContent-#{$selector} {
+        height: 100%;
+        width: 50%;
+        padding: 0;
+        background-color: $color;
+    }
+}

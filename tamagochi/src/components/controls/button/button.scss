@@ -1,0 +1,17 @@
+@import "./../../mixin/mediaMixin.scss";
+
+@each $selector, $color in (eat, #e74c3c), (drink, #3498db), (relax, #e67e22), (job, #95a5a6) {
+    .btn-#{$selector} {
+        height: 31px;
+        width: 340px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: $color;
+        border: 0;
+        border-radius: 5px;
+
+        @include _768 {
+            width: 280px;
+        }
+    }
+}
