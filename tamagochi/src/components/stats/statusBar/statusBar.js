@@ -7,12 +7,13 @@ class StatusBar extends React.Component {
         {
             id: '1',
             name: 'Здоровье:',
-            className: 'hp'
+            className: 'HEALTH',
+            type: 'health'
         },
         {
             id: '2',
             name: 'Жажда:',
-            className: 'thr'
+            className: 'DRINK'
         },
         {
             id: '3',
@@ -27,12 +28,13 @@ class StatusBar extends React.Component {
     ];
 
     render() {
+        console.log(this.props.statusData);
         return (
             <Fragment>
                 {this.statusBars.map(statusBar => <div className="statusContainer" key={statusBar.id}>
                     <h4 className="statusTitle">{statusBar.name}</h4>
                     <div className="statusСapacity">
-                        <div className={`statusContent-${statusBar.className}`}></div>
+                        <div style={{width:this.props.statusData[statusBar.className] + '%'}} className={`statusContent-${statusBar.className}`}></div>
                     </div>
                 </div>)}
             </Fragment>

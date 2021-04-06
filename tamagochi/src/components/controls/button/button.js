@@ -1,46 +1,57 @@
-import React, { Fragment } from 'react';
+import React, { useContext } from 'react';
+import { ContextApp } from "./../../../reducer";
 import './button.scss';
 
-class Button extends React.Component {
-    buttons = [
+export default function Button() {
+
+
+    let buttons = [
         {
             id: '1',
             name: 'ЕСТЬ',
             className: 'eat',
-            click: 'кликнули по еде'
+            tp: 'HEALTH'
         },
         {
             id: '2',
             name: 'ПИТЬ',
             className: 'drink',
-            click: 'кликнули по питью'
+            tp: 'DRINK'
         },
         {
             id: '3',
             name: 'ОТДОХНУТЬ',
             className: 'relax',
-            click: 'кликнули по отдыху'
+            tp: 'RELAX'
         },
         {
             id: '4',
             name: 'РАБОТАТЬ',
             className: 'job',
-            click: 'кликнули по работе'
+            tp: 'JOB'
         }
     ]
 
-    render() {
-        return (
-            <Fragment>
-                {this.buttons.map(btn =>
-                    <button className={`btn-${btn.className}`} key={btn.id}>
-                        {btn.name}
-                    </button>
-                )}
-            </Fragment>
+    const { state, dispatch } = useContext(ContextApp);
+    let tempType = 0;
 
+    let onClick  = (btn) => 
+        
+        dispatch({
+            type: btn.target.id,
+            payload: {
+                [btn.target.id]: state[btn.target.id] - 10
+            }
+        })
+    
+    
+    return (
+        buttons.map(btn =>
+            <button className={`btn-${btn.className}`} key={btn.id} id={btn.tp} onClick={onClick}>
+                {btn.name}
+            </button>
+            
         )
-    }
-}
 
-export default Button;
+    )
+}
