@@ -18,17 +18,16 @@ class StatusBar extends React.Component {
         {
             id: '3',
             name: 'Голод:',
-            className: 'hungry'
+            className: 'HUNGRY'
         },
         {
             id: '4',
             name: 'Усталость:',
-            className: 'energy'
+            className: 'ENERGY'
         }
     ];
 
     render() {
-        console.log(this.props.statusData);
         return (
             <Fragment>
                 {this.statusBars.map(statusBar => <div className="statusContainer" key={statusBar.id}>

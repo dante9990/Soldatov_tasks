@@ -39,9 +39,10 @@
     }
 }
 
-@each $selector, $color in (HEALTH, #e74c3c), (DRINK, #3498db), (hungry, #e67e22), (energy, #95a5a6) {
+@each $selector, $color in (HEALTH, #e74c3c), (DRINK, #3498db), (HUNGRY, #e67e22), (ENERGY, #95a5a6) {
     .statusContent-#{$selector} {
         height: 100%;
+        max-width: 340px;
         padding: 0;
         background-color: $color;
     }

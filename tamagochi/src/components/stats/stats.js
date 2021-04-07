@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ContextApp } from "./../../reducer";
 import './stats.scss';
 import StatusBar from './statusBar/statusBar';
 
 
-class Stats extends React.Component {
-    render() {
+export default function Stats() {
+
+        const { state} = useContext(ContextApp);
         return (
             <div className="stats">
-                <StatusBar />
+                <StatusBar statusData={state} />
             </div>
         )
-    }
 }
-
-export default Stats;

@@ -2,12 +2,13 @@ import React from "react";
 export const ContextApp = React.createContext();
 
 export const initialState = {
-    HEALTH: 100,
-    DRINK: 100
+    HEALTH: 50,
+    DRINK: 100,
+    HUNGRY: 100,
+    ENERGY: 50,
 };
 
 export const testReducer = (state, action) => {
-    console.log(action.type)
     switch (action.type) {
 
         case 'HEALTH':
@@ -16,6 +17,16 @@ export const testReducer = (state, action) => {
                 ...action.payload
             };
         case 'DRINK':
+            return {
+                ...state,
+                ...action.payload
+            };
+        case 'HUNGRY':
+            return {
+                ...state,
+                ...action.payload
+            };
+        case 'ENERGY':
             return {
                 ...state,
                 ...action.payload
