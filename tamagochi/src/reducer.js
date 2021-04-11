@@ -1,10 +1,11 @@
 import React from "react";
 export const ContextApp = React.createContext();
 
+
 export const initialState = {
     HEALTH: 50,
-    DRINK: 100,
-    HUNGRY: 100,
+    DRINK: 50,
+    HUNGRY: 50,
     ENERGY: 50,
 };
 

@@ -43,7 +43,11 @@
     .statusContent-#{$selector} {
         height: 100%;
         max-width: 340px;
+        min-width: 0;
         padding: 0;
         background-color: $color;
+        @include _768 {
+            max-width: 280px;
+        }
     }
 }
