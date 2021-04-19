@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './button/button';
+import Button from './../button/button';
 import './controls.scss';
 
 class Controls extends React.Component {

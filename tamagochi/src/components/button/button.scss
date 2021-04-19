@@ -1,4 +1,4 @@
-@import "./../../mixin/mediaMixin.scss";
+@import "./../../styles/mixin/mediaMixin.scss";
 
 @each $selector, $color in (eat, #e74c3c), (drink, #3498db), (relax, #e67e22), (job, #95a5a6) {
     .btn-#{$selector} {
