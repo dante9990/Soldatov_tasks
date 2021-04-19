@@ -1,6 +1,6 @@
 import React from 'react';
-import TaskCompleted from './taskCompleted/TaskCompleted';
-import TaskOnHold from './taskOnHold/TaskOnHold';
+import TaskCompleted from './../taskCompleted/TaskCompleted';
+import TaskOnHold from './../taskOnHold/TaskOnHold';
 import s from './Tasks.module.scss';
 
 export default function Tasks() {

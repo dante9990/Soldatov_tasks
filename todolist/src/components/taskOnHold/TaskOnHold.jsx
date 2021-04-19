@@ -6,32 +6,32 @@ export default function TaskOnHold() {
         <div>
             <div className={s.task}>
                 <p className={s.task_text}>Evaluate the addition and deletion of user IDs.</p>
-                <label htmlFor="1" >
-                    <input type="checkbox" name="status" id="1" className={s.input} />
+                <label htmlFor="5" >
+                    <input type="checkbox" name="status" id="5" className={s.input} />
                     <div className={s.btn_status}>Pending</div>
                 </label>
                 <span>minor</span>
             </div>
             <div className={s.task}>
                 <p className={s.task_text}>Evaluate the addition and deletion of user IDs.</p>
-                <label htmlFor="2" >
-                    <input type="checkbox" name="status" id="2" className={s.input} />
+                <label htmlFor="6" >
+                    <input type="checkbox" name="status" id="6" className={s.input} />
                     <div className={s.btn_status}>Pending</div>
                 </label>
                 <span>minor</span>
             </div>
             <div className={s.task}>
                 <p className={s.task_text}>Evaluate the addition and deletion of user IDs.</p>
-                <label htmlFor="3" >
-                    <input type="checkbox" name="status" id="3" className={s.input} />
+                <label htmlFor="7" >
+                    <input type="checkbox" name="status" id="7" className={s.input} />
                     <div className={s.btn_status}>Pending</div>
                 </label>
                 <span>minor</span>
             </div>
             <div className={s.task}>
                 <p className={s.task_text}>Evaluate the addition and deletion of user IDs.</p>
-                <label htmlFor="4" >
-                    <input type="checkbox" name="status" id="4" className={s.input} />
+                <label htmlFor="8" >
+                    <input type="checkbox" name="status" id="8" className={s.input} />
                     <div className={s.btn_status}>Pending</div>
                 </label>
                 <span>minor</span>
