@@ -1,0 +1,33 @@
+.task {
+    display: flex;
+    width: 917px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E0E0E0;
+    &_text{
+        font-size: 14px;
+        margin-left: 20px;
+    }
+}
+
+.input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.btn_status {
+    display: inline-block;
+    text-align: center;
+    width: 77px;
+    height: 18px;
+    border-radius: 8px;
+    font-size: 11px;
+    color: #F2994A;
+    background-color: rgba(242, 153, 74, 0.2);
+}
+
+.input:checked+.btn_status {
+    color: #56CCF2;
+    background-color: rgba(86, 204, 242, 0.2);
+}

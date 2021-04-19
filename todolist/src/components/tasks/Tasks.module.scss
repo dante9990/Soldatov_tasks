@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 595px;
+  flex-direction: row;
+  border: 1px solid red;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1D262C;
+    
+  }
+  
+  .pinky {
+    color: #F3477A;
+  }
+
+  .tasks {
+      grid-area: t;
+      border: 1px solid red;
+  }
+
+  .tasks_title {
+    font-size: 18px;
+    color: #1D262C;
+    font-style: normal;
+  }
+
+  .btn {
+    width: 139px;
+    height: 34px;
+    background-color: #884CB2;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+  }

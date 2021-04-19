@@ -1,0 +1,21 @@
+.user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    border: 1px solid red;
+}
+
+.avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 5px solid #FD648E;
+}
+
+.vector {
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+    background: url('./../../../assets/img/vector.svg') no-repeat;
+}

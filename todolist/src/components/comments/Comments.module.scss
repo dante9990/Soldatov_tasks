@@ -1,0 +1,19 @@
+.comments {
+    grid-area: c;
+    width: 293px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.comment {
+    width: 293px;
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 5px solid #FD648E;
+}
